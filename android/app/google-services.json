@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "943900860564",
+    "project_id": "native-notifications-1c672",
+    "storage_bucket": "native-notifications-1c672.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943900860564:android:4aaed817d4ddc3b1375481",
+        "android_client_info": {
+          "package_name": "com.nativenotifications"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzjtEw_1EppV1RgwUg-DH5hsEP8byEBao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
