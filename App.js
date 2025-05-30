@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Alert, Platform} from 'react-native';
+import { Alert, PermissionsAndroid, Platform } from "react-native";
 import messaging from '@react-native-firebase/messaging';
 import notifee, {AndroidImportance, EventType} from '@notifee/react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -7,6 +7,21 @@ import AppNavigation from './src/AppNavigation'; // Ensure this path is correct
 
 const App = () => {
   useEffect(() => {
+    const requestPermission = async () => {
+      if (Platform.OS === 'android' && Platform.Version >= 33) {
+        const { PermissionsAndroid } = require('react-native');
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS,
+        );
+
+        if (granted !== PermissionsAndroid.RESULTS.GRANTED) {
+          console.log('Notification permission not granted');
+          return;
+        }
+      }
+    };
+    requestPermission();
+
     const initializeNotifications = async () => {
       // Request permissions on iOS
       if (Platform.OS === 'ios') {
